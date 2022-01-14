@@ -1,24 +1,21 @@
-# Introduction
 
-Vue Formulate Currency is a [Vue Formulate][1] plugin that provides the
-[vue-currency-input][2] UI into a `FormulateInput`.
+<p align="center"><a href="https://vueformulate.com" target="_blank" rel="noopener noreferrer"><img width="100" src="https://assets.wearebraid.com/vue-formulate/logo.png" alt="VueFormulate"></a></p>
 
-# Installation
 
-## NPM
+### Vue Formulate Currency
+
+Vue Formulate ships with the english locale out of the box, while this package
+contains a growing list of language support.
+
+### Install
 ```sh
-npm install @vicenterusso/vue-formulate-currency
-```
-## Yarn
-```sh
-yarn add @vicenterusso/vue-formulate-currency
+npm install vue-formulate-currency
 ```
 
-## Add to Vue
-
-As with any [Vue Formulate plugin][3]:
-
-```javascript
+### Usage
+Add to your vue formulate plugins. 
+[Documentation](https://vueformulate.com/guide/plugins/#creating-a-new-plugin)
+```js
 import Vue from 'vue'
 import VueFormulate from '@braid/vue-formulate'
 
@@ -28,17 +25,33 @@ Vue.use(VueFormulate, {
     plugins: [ FormulateVueCurrencyPlugin ]
 })
 ```
+For Nuxt.js ♥ add the plugin to your `formulate.config.js` file.
+[Documentation](https://vueformulate.com/guide/installation/#nuxt)
 
-# Usage
-
-Use `currency` as the input `type`. 
-
-```html
-<FormulateInput type="currency" />
+### Component Usage
+Add the currency type to a formulate component
+```js
+<FormulateInput  type="currency"/>
 ```
 
-It works as any other `FormulateInput`.
+| Prop |Value Example|Default Value |
+|--|--|--|
+|  currencyPrefix| "$"|""
+|  emptyValue| "Empty!"|""
+|  currencySymbolPosition| "prefix"|"prefix" or "suffix"
+|  placeholder| "Im a placeholder!"|""
+|  precision| 0|2
+|  separator| "-"|","
+|  outputType| "string"|"number"
 
-[1]: https://vueformulate.com
-[2]: https://dm4t2.github.io/vue-currency-input/
-[3]: https://vueformulate.com/guide/plugins/
+#### Special Props : styling✨
+
+The styling prop is optional and can be used to add in classes to your input. It accepts and array of classes or a string and will be combined with the formulate configuration classes set in your project.
+> Duplicate classes are always removed.
+```js
+<FormulateInput  type="currency"  currencyPrefix="$" :styling="['border-2', 'border-blue-gray-200']"/>
+```
+or using a string...
+```js
+<FormulateInput  type="currency"  currencyPrefix="$" :styling="border-2 border-blue-gray-200"/>
+```
