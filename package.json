@@ -42,6 +42,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/ryntab/vue-formulate-currency.git"
+  },
+  "bugs" :{
+    "url" : "https://github.com/ryntab/vue-formulate-currency/issues"
   }
 }
