@@ -1,6 +1,6 @@
 {
   "name": "vue-formulate-currency",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Currency input for vue-formulate",
   "private": false,
   "main": "dist/index.js",
@@ -44,7 +44,7 @@
     "type": "git",
     "url": "git+https://github.com/ryntab/vue-formulate-currency.git"
   },
-  "bugs" :{
-    "url" : "https://github.com/ryntab/vue-formulate-currency/issues"
+  "bugs": {
+    "url": "https://github.com/ryntab/vue-formulate-currency/issues"
   }
 }
