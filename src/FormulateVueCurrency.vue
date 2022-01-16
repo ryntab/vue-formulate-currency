@@ -1,12 +1,8 @@
 <template>
-<vue-numeric :empty-value="emptyValue" :placeholder="placeholder" v-bind:minus="false" :currency-symbol-position="currencySymbolPosition" :currency="currencyPrefix" :precision="precision" v-bind:class="classes" :separator="separator" v-model="value"></vue-numeric>
-<!-- <pre>
-        {{context}}
-        </pre> -->
+<vue-numeric :empty-value="emptyValue" :placeholder="placeholder" v-bind:minus="false" :currency-symbol-position="currencySymbolPosition" :currency="currencyPrefix" :precision="precision" v-bind:class="classes" :separator="separator" v-model="context.model"></vue-numeric>
 </template>
 
 <script>
-import Vue from 'vue'
 import VueNumeric from 'vue-numeric'
 
 export default {
