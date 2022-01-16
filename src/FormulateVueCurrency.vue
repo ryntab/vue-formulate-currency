@@ -6,12 +6,6 @@
 import VueNumeric from 'vue-numeric'
 
 export default {
-    data() {
-        return {
-            amount: null,
-            value: 0,
-        }
-    },
     components: {
         VueNumeric
     },
