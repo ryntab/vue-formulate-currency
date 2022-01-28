@@ -5,7 +5,6 @@
 ### Vue Formulate Currency
 
 Vue Formulate Currency allows for better currency input formatting.
-contains a growing list of language support.
 
 ### Install
 ```sh
