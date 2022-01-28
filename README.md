@@ -4,7 +4,7 @@
 
 ### Vue Formulate Currency
 
-Vue Formulate ships with the english locale out of the box, while this package
+Vue Formulate Currency allows for better currency input formatting.
 contains a growing list of language support.
 
 ### Install
