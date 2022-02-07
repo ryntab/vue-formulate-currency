@@ -18,7 +18,7 @@ Add to your vue formulate plugins.
 import Vue from 'vue'
 import VueFormulate from '@braid/vue-formulate'
 
-import FormulateVueCurrencyPlugin from '@vicenterusso/vue-formulate-currency'
+import FormulateVueCurrencyPlugin from 'vue-formulate-currency'
 
 Vue.use(VueFormulate, {
     plugins: [ FormulateVueCurrencyPlugin ]
