@@ -1,11 +1,19 @@
 <template>
-<vue-numeric :empty-value="emptyValue" :placeholder="placeholder" v-bind:minus="false" :currency-symbol-position="currencySymbolPosition" :currency="currencyPrefix" :precision="precision" v-bind:class="classes" :separator="separator" v-model="context.model"></vue-numeric>
+<div>
+    <vue-numeric v-bind:min="rangeValues.min" v-bind:max="rangeValues.max" :empty-value="emptyValue" :placeholder="placeholder" v-bind:minus="false" :currency-symbol-position="currencySymbolPosition" :currency="currencyPrefix" :precision="precision" v-bind:class="classes" :separator="separator" v-model="context.model"></vue-numeric>
+    {{ validation }}
+</div>
 </template>
 
 <script>
 import VueNumeric from 'vue-numeric'
 
 export default {
+    data() {
+        return {
+            validation: {}
+        }
+    },
     components: {
         VueNumeric
     },
@@ -16,6 +24,32 @@ export default {
         },
     },
     computed: {
+        rangeValues() {
+
+            if (this.context.attributes.fixedRange == null || this.context.attributes.fixedRange == false) {
+                return {
+                    min: null,
+                    max: null
+                }
+            }
+
+            let range = new Object;
+
+            let rangeProps = this.context.rules.filter(function (e) {
+                if (e.ruleName != null && e.args != null) {
+                    return e.ruleName === "min" || "max" && e.args.length > 0;
+                }
+            });
+
+            rangeProps.forEach(item => {
+                let key = item['ruleName'];
+                let value = parseInt(item['args'][0]);
+                range[key] = value;
+            });
+
+            return range;
+
+        },
         currencyPrefix() {
             return this.context.attributes.currencyPrefix || '';
         },
