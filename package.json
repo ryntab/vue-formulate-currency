@@ -1,6 +1,6 @@
 {
   "name": "vue-formulate-currency",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "Currency input for vue-formulate",
   "private": false,
   "main": "dist/index.js",
